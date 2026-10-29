@@ -13,12 +13,18 @@ public class SearchAlgorithms {
         return -1;
     }
 
+    public static <T extends Comparable<T>> int recursiveBinarySearch(T[] arr, T target) {
+        return recursiveBinarySearch(arr, target, 0, arr.length);
+    }
+
     public static <T extends Comparable<T>> int recursiveBinarySearch(T[] arr, T target,
-         int low, int high){
+                                                                    int low, int high){
         if (low>high) return -1;
         int mid = (low+high)/2;
         if (arr[mid].compareTo(target)==0) return mid;
-        else if (arr[mid].compareTo(target)<0) 
+        else if (arr[mid].compareTo(target)<0) return recursiveBinarySearch(arr, target, mid+1, high); //search right
+        else return recursiveBinarySearch(arr, target, low, mid-1); //search left
+
             
         
     }

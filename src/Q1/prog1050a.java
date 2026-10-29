@@ -16,10 +16,18 @@ public class prog1050a {
         var records = new ArrayList<SalesRecord>();
         try {
             var file = new Scanner(new File(filepath));
-            file
+            file.nextLine();
+            while(file.hasNextLine()){
+                String line = file.nextLine();
+                String[] data = line.split(",");
+                records.add(new SalesRecord(data));
+
+            }
         }catch (IOException e){
             e.printStackTrace();
             return null;
+        }finally{
+            file.close();
         }
         return records;
     }
