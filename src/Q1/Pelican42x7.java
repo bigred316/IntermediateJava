@@ -29,7 +29,7 @@ public class Pelican42x7 {
         var bank = new ArrayList<BankAccount>();
         System.out.print("Please answer the name of the account holder (Type Exit to abort) ");
         while(!(input.next().toLowerCase().equals("exit"))){
-            String name = input.nextLine()
+            String name = input.nextLine();
             System.out.print("Please input the account balance ");
         }
     }
